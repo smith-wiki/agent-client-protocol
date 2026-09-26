@@ -1,0 +1,9 @@
+# ACP carries conversations while MCP supplies the tools behind them
+
+ACP reuses MCP representations—most visibly `ContentBlock`—instead of inventing parallel types, but the protocols have different jobs: ACP manages the client–agent conversation; MCP connects the agent to tools and data ([architecture, L5–L9 and L21–L28](https://agentclientprotocol.com/get-started/architecture)).
+
+In stable v1, the client passes `mcpServers` on `session/new`, `session/load`, or `session/resume`. A stdio entry has `name`, absolute `command`, `args`, and optional `env`; every agent must support it. HTTP and SSE entries use `type`, `name`, `url`, and `headers`, and require `mcpCapabilities.http` or `mcpCapabilities.sse` respectively (SSE is deprecated by MCP) ([session setup, L145–L180 and L182–L244](https://agentclientprotocol.com/protocol/v1/session-setup)). The agent—not the ACP client—then connects to those servers.
+
+The **MCP-over-ACP RFD is a draft/unstable extension**, not stable v1. It proposes declaring an MCP server as `{"type":"acp","serverId":"project-tools"}` and using the already-authorized ACP channel, avoiding another subprocess or listener ([MCP-over-ACP, L3–L10](https://agentclientprotocol.com/rfds/mcp-over-acp)). Capability support is separate from per-request MCP capabilities ([MCP-over-ACP, L31–L42](https://agentclientprotocol.com/rfds/mcp-over-acp)).
+
+Its single outer method, `mcp/message`, is an agent-to-provider request or provider-to-agent notification. Both carry required `serverId`, fresh `requestId`, and inner MCP `method`, plus optional object-or-null `params`; the response carries exactly one inner `result` or `error` ([MCP-over-ACP, L13–L23 and L43–L64](https://agentclientprotocol.com/rfds/mcp-over-acp)). It is deliberately stateless—no MCP `initialize`, connection object, or connect/disconnect—and currently targets MCP 2026-07-28 only ([MCP-over-ACP, L5–L6](https://agentclientprotocol.com/rfds/mcp-over-acp)).

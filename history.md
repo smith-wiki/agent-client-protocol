@@ -1,0 +1,10 @@
+# ACP grew from Zed’s 2025 agent integration into a jointly governed protocol
+
+- **August 27, 2025 — public launch.** Zed announced ACP with Gemini CLI as its launch partner, describing the protocol as the minimal JSON-RPC contract it had defined so agents could run inside editor-native interfaces. ([Zed launch announcement](https://zed.dev/blog/bring-your-own-agent-to-zed))
+- **November 26, 2025 — early public explanation.** Ben Brandt presented “Agents in the IDE” at AI Builders Berlin, the first dated talk in ACP’s publication list. ([publications, L1–L5](https://agentclientprotocol.com/publications))
+- **January 28–29, 2026 — integrations and architecture.** Anna Zhdan presented Codex in IntelliJ; the next day Sergey Ignatov spoke on “AI Agents and IDEs.” ([publications, L7–L13](https://agentclientprotocol.com/publications))
+- **2026 — ecosystem infrastructure.** The ACP Registry reached Completed and shipped a common discovery, installation, and configuration path for agents; Sergey Ignatov of JetBrains became a lead maintainer, reflecting expanding Zed–JetBrains collaboration. ([updates, L110–L113](https://agentclientprotocol.com/updates)) ([updates, L129–L134](https://agentclientprotocol.com/updates))
+- **2026 — implementation stability.** The Rust and TypeScript SDKs reached `1.0.0`, providing stable foundations for clients, agents, and adapters. ([updates, L38–L43](https://agentclientprotocol.com/updates))
+- **2026 — the next protocol generation.** ACP v2 documentation and schema were published only as **Draft**, not as stable protocol. ([updates, L19–L24](https://agentclientprotocol.com/updates))
+
+The publication archive also records a joint Zed–JetBrains conversation, “What Is the Agent Client Protocol — and Why JetBrains and Zed Are Building It Together,” plus Jun Han’s “Agent Client Protocol in GitHub Copilot,” showing the protocol’s widening client audience. ([publications, L39–L47](https://agentclientprotocol.com/publications)) See [governance](governance.md) for how that collaboration is formalized.

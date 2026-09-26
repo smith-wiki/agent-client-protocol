@@ -18,6 +18,6 @@ integration problem becomes N+M.
 
 The protocol is editor-centric: it assumes the user lives in the editor and
 reaches out to agents for specific tasks
-([L12](https://agentclientprotocol.com/get-started/introduction)). How the two
-sides are connected is on [Local agents speak JSON-RPC over stdio; remote
-agents are still in progress](transports.md).
+([L12](https://agentclientprotocol.com/get-started/introduction)). Who owns
+what is on [ACP is bidirectional](architecture.md); how the two sides are
+connected is on [Stdio is ACP's stable transport](transports.md).
